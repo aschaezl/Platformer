@@ -11,7 +11,32 @@ class Load extends Phaser.Scene {
 
         // Load tilemap information
         this.load.image("tilemap_tiles", "tilemap_packed.png");                         // Packed tilemap
+        this.load.image("bgTilemap_tiles", "tilemap-backgrounds_packed.png");
         this.load.tilemapTiledJSON("platformer-level-1", "platformer-level-1.tmj");   // Tilemap in JSON
+
+        this.load.audio("coin", "toggle_001.ogg");
+        this.load.audio("power", "powerUp7.ogg");
+        this.load.audio("collect", "threeTone2.ogg");
+        this.load.audio("walk", "footstep_concrete_003.ogg");
+        this.load.audio("jump", "phaseJump3.ogg");
+        this.load.audio("bigJump", "phaseJump2.ogg");
+        this.load.audio("land", "footstep_grass_003.ogg");
+        this.load.audio("goal", "phaserUp7.ogg");
+        this.load.audio("drown", "impactPlate_heavy_001.ogg");
+        
+
+        // Load the tilemap as a spritesheet
+        this.load.spritesheet("tilemap_sheet", "tilemap_packed.png", {
+            frameWidth: 18,
+            frameHeight: 18
+        });
+
+        this.load.spritesheet("bgTilemap_sheet", "tilemap-backgrounds_packed.png", {
+            frameWidth: 18,
+            frameHeight: 18
+        });
+
+        this.load.multiatlas("kenny-particles", "kenny-particles.json");
     }
 
     create() {
